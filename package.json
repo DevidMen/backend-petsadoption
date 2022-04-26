@@ -32,9 +32,11 @@
     "express-session": "^1.17.2",
     "express-validator": "^6.14.0",
     "jsonwebtoken": "^8.5.1",
+    "knex": "^2.0.0",
     "mysql": "^2.18.1",
     "nanoid": "^3.3.2",
     "nodemon": "^2.0.15",
+    "util": "^0.12.4",
     "uuidv4": "^6.2.13"
   },
   "type": "module"

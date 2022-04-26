@@ -2,7 +2,6 @@ import Ajv from "ajv";
 import addFormat from "ajv-formats";
 import updatePassSchema from "../data/updatePassSchema.js";
 
-
 const ajv = new Ajv();
 addFormat(ajv);
 
