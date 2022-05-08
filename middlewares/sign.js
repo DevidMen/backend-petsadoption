@@ -1,10 +1,11 @@
 import jwt from "jsonwebtoken";
-
+import dotenv from 'dotenv'
+dotenv.config()
 const createTokens = (currentUser) => {
   const accessToken = jwt.sign(
     { email: currentUser.email, password: currentUser.password },
-    "ciaociao",
-    { expiresIn: 900 }
+    process.env.SECRETKEY,
+    { expiresIn: 6000 }
   );
 
   return accessToken;
