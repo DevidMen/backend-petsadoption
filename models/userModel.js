@@ -66,6 +66,10 @@ async function update(
 ) {
   const queryOfInsertingUser =
     "UPDATE users SET biography = ? , email = ? , firstname = ? , lastname = ? , phone = ? WHERE email = ?";
+    const queryOfUpdateOwner =
+    "UPDATE pets SET owner = ? WHERE owner = ?";
+    const queryOfSavedPets =
+    "UPDATE savepets SET email = ? WHERE email = ?";
 
   const resultIfExist = await promiseQuery(queryIfExist, [email]);
 
@@ -78,7 +82,9 @@ async function update(
       phone,
       loginemail,
     ]);
-
+    
+const result = await promiseQuery(queryOfUpdateOwner, [email, loginemail]);
+const resultOfSavedPets = await promiseQuery(queryOfSavedPets, [email, loginemail]);
     return update;
   } else {
     return false;
