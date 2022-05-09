@@ -1,9 +1,9 @@
 import cloudinary from 'cloudinary'
 import fs from "fs"
 cloudinary.config({ 
-  cloud_name: 'docqorrbr', 
-  api_key: '413291538811967', 
-  api_secret: 'AuSt47KVQVHOie7yLb22Vo-BlAo' 
+  cloud_name: process.env.CLOUDNAME, 
+  api_key: process.env.KEYCLOUDINARY, 
+  api_secret: process.env.APYSECRETCLOUDINARY, 
 });
  function uploadCloudinary(req,res,next){
   const regex = /(?:https?):\/\/(\w+:?\w*)?(\S+)(:\d+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;

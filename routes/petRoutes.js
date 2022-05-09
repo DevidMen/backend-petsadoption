@@ -35,7 +35,7 @@ router.get("/searchpet",validation(searchSchema),searchPetsController.searchPets
 
 router.get("/getpets", validateToken, getPetsController.getPets);
 
-router.get("/showpet/:petsId",validateToken ,getPetController.getPet);
+router.get("/showpet/:petsId",getPetController.getPet);
 
 router.post("/pet/:petsId/fostered",validateToken,fosteredController.fostered);
 
