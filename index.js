@@ -25,6 +25,6 @@ app.use(userRoutes)
 app.use(petRoutes)
 
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
