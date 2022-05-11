@@ -52,7 +52,7 @@ async function update(req, res, next) {
           biography,
           image,
           petsId,
-          message: "Pet edit is done",
+          message: "Pet update succesfull",
         });
       } else {
         res.status(401).send("Something wrong");

@@ -18,7 +18,7 @@ async function updatePass(req, res, next) {
             message: "Password and confirm password must be the same",
           });
         } else {
-          const accessToken = createTokens({ email, password });
+          const accessToken = createTokens({ email });
 
           res.cookie(process.env.ACCESSTOKENKEY, accessToken, {
             maxAge: 60 * 60 * 24 * 30 * 1000,
