@@ -14,7 +14,7 @@ db.getConnection(function (err,connection) {
   if (err) {
  
   }
-  connection.release();
+
   const users =
     "CREATE TABLE  if not exists users(email VARCHAR(45), firstname VARCHAR(45), lastname VARCHAR(45), password VARCHAR(500), phone VARCHAR(45) , biography VARCHAR(45), role VARCHAR(45))";
     const pets =
