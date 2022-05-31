@@ -1,8 +1,10 @@
 import { promisify } from "util";
 import { db } from "../data/database.js";
 const promiseQuery = promisify(db.query).bind(db);
+
 const query = `SELECT * from users WHERE email = ?`;
 const queryIfExist = "SELECT email FROM users WHERE email = ?";
+
 async function login(email) {
   const result = await promiseQuery(query, [email]);
 

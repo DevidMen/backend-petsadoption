@@ -1,7 +1,8 @@
 import { promisify } from "util";
 import { db } from "../data/database.js";
 const promiseQuery = promisify(db.query).bind(db);
-
+const querypet = "SELECT * FROM pets WHERE owner = ? AND adoptionStatus = ?";
+const queryAllpets = "SELECT * FROM pets";
 async function addPets(
   type,
   namePets,
@@ -37,7 +38,7 @@ async function addPets(
   }
 }
 async function getPets() {
-  const queryAllpets = "SELECT * FROM pets";
+
 
   const allPets = await promiseQuery(queryAllpets);
   if (allPets) {
@@ -73,13 +74,13 @@ async function getMySavedPet(email) {
 }
 async function getMyAdoptedPet(email) {
   const status = "Adopted";
-  const querypet = "SELECT * FROM pets WHERE owner = ? AND adoptionStatus = ?";
+
   const pet = await promiseQuery(querypet, [email, status]);
   return pet;
 }
 async function getMyFosteredPet(email) {
   const status = "Fostered";
-  const querypet = "SELECT * FROM pets WHERE owner = ? AND adoptionStatus = ?";
+
   const pet = await promiseQuery(querypet, [email, status]);
   return pet;
 }
@@ -107,9 +108,9 @@ async function returnAgency(email, petsId) {
       status,
       petsId,
     ]);
-    const queryPets = "SELECT * FROM pets";
 
-    const getpets = await promiseQuery(queryPets);
+
+    const getpets = await promiseQuery(queryAllpets);
 
     return getpets;
   } else {
